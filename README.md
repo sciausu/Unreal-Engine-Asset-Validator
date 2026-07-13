@@ -2,7 +2,7 @@
 Simple to use tool that validates assets used in an Unreal Engine project, specifically naming conventions and dependencies.
 The tool validates asset naming conventions against Epic Games recommended standard. Dependency and orphaned asset checking is currently on the roadmap
 
-Below is the command to run the program in the Command Terminal / Console / CMD
+Below is the command to run the program in the Command Terminal / Console / CMD:
 
 "<Enter Path to file>\UnrealEditor-Cmd.exe" "<Enter Path to file>.uproject" -run=pythonscript -script="<Enter Path to file>\assetValidator.py" -stdout -FullStdOutLogOutput
 
