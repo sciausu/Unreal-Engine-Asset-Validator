@@ -1,5 +1,5 @@
 # Below is the command to run the program in the Command Terminal / Console / CMD
-# "<Enter Path to file>\UnrealEditor-Cmd.exe" "<Enter Path to file>.uproject" -run=pythonscript -script="<Enter Path to file>\assetValidator.py" -stdout -FullStdOutLogOutput# https://dev.epicgames.com/documentation/unreal-engine/recommended-asset-naming-conventions-in-unreal-engine-projects
+# "<Enter Path to file>\UnrealEditor-Cmd.exe" "<Enter Path to file>.uproject" -run=pythonscript -script="<Enter Path to file>\assetValidator.py" -stdout -FullStdOutLogOutput
 
 # Naming conventions used as reference
 # https://dev.epicgames.com/documentation/unreal-engine/recommended-asset-naming-conventions-in-unreal-engine-projects
@@ -75,7 +75,7 @@ def main():
 
     for asset in allAssets:
         Atype = str(asset.asset_class_path.asset_name)
-        
+
         if Atype in UETypes and str(asset.package_path)[0:5] == "/Game":
             prefix = UETypes[Atype]
 
