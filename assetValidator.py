@@ -6,7 +6,7 @@
 
 import unreal
 
-UETypes = {
+UE_Types = {
     # Note: Key names will be merged as to match the result from the asset registry
     # Additional names and conventions can be added to the users discretion
 
@@ -67,24 +67,24 @@ UETypes = {
 
 def main():
     registry = unreal.AssetRegistryHelpers.get_asset_registry()
-    allAssets = registry.get_all_assets()
+    all_assets = registry.get_all_assets()
 
-    namingIssues = []
-    missingDepends = []
+    naming_issues = []
+    # missing_depends = [] WIP
 
 
-    for asset in allAssets:
+    for asset in all_assets:
         Atype = str(asset.asset_class_path.asset_name)
 
-        if Atype in UETypes and str(asset.package_path)[0:5] == "/Game":
-            prefix = UETypes[Atype]
+        if Atype in UE_Types and str(asset.package_path)[0:5] == "/Game":
+            prefix = UE_Types[Atype]
 
             if str(asset.asset_name)[0:len(prefix)] != prefix:
-                namingIssues.append([prefix, str(asset.asset_name)])
+                naming_issues.append([prefix, str(asset.asset_name)])
     
     print("Files with naming convention issues: ")
 
-    for file in namingIssues:
+    for file in naming_issues:
         print(file[1], "-->", file[0]+file[1])
 
     print()
